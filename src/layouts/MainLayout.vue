@@ -12,10 +12,10 @@
         />
 
         <q-toolbar-title>
-          Quasar App
+          Quasar Url Shortner App
         </q-toolbar-title>
 
-        <div>Quasar v{{ $q.version }}</div>
+        <div>v.1.0.0</div>
       </q-toolbar>
     </q-header>
 
@@ -26,7 +26,7 @@
       class="bg-grey-2"
     >
       <q-list>
-        <q-item-label header>Essential Links</q-item-label>
+        <q-item-label header>Menu</q-item-label>
 
        <!--  <q-item clickable tag="a" target="_blank" href="https://quasar.dev">
           <q-item-section avatar>
@@ -80,7 +80,7 @@
           </q-item-section>
           <q-item-section>
             <q-item-label>About</q-item-label>
-            <q-item-label caption>@quasarframework</q-item-label>
+            <!-- <q-item-label caption>@quasarframework</q-item-label> -->
           </q-item-section>
         </q-item>
 
@@ -90,7 +90,17 @@
           </q-item-section>
           <q-item-section>
             <q-item-label>Home</q-item-label>
-            <q-item-label caption>@quasarframework</q-item-label>
+            <!-- <q-item-label caption>@quasarframework</q-item-label> -->
+          </q-item-section>
+        </q-item>
+
+        <q-item clickable @click="go_to('ListUrl')">
+          <q-item-section avatar>
+            <q-icon name="rss_feed" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>List URL</q-item-label>
+            <!-- <q-item-label caption>@quasarframework</q-item-label> -->
           </q-item-section>
         </q-item>
 

@@ -4,6 +4,7 @@ import MainLayout from '../layouts/MainLayout.vue'
 import Home from '../pages/Home.vue'
 import Login from '../pages/Login.vue'
 import About from '../pages/About.vue'
+import ListUrl from '../pages/Url/ListUrl.vue'
 import NotFound from '../pages/NotFound.vue'
 
 const routes = [
@@ -12,6 +13,7 @@ const routes = [
       [
         { path: 'home', name: "Home", component: Home },
         { path: 'about', name: "About", component: About },
+        { path: 'list-url', name: "ListUrl", component: ListUrl },
       ],
   },
   {
