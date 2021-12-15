@@ -1,6 +1,9 @@
 {
   "name": "url-shortner-front",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "description": "URL Quasar Shortner",
+  "productName": "Quasar App",
+  "author": "Rafael Assis <rafaassis15@gmail.com>",
   "private": true,
   "scripts": {
     "dev": "vue-cli-service serve",
