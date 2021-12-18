@@ -10,7 +10,13 @@ export default class {
   }
 
   static post(body){
+    console.log('body', body)
     return http.post(url.base, body);
+  }
+
+  static getShorUrl(short_url){
+    console.log("o que vai buscar agora", url.getShort + short_url)
+    return http.get(url.getShort + short_url);
   }
 
   static put(body){

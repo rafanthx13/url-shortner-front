@@ -1,21 +1,22 @@
 import http from './http'
 import store from '../store';
 
-let login = store.getters.getRoutes.auth;
+let auth = store.getters.getRoutes.auth;
 
 export default class {
 
   static login(body){
-    return http.post(login.login, body);
+    return http.post(auth.login, body);
   }
 
-  static register(body){
-    return http.post(login.register, body);
+  static signup(body){
+    console.log("entrou api")
+    return http.post(auth.signup, body);
   }
 
   // Infelizmente, as vezes o token não é mandado
   static auth(token){
-    return http.get(login.auth, {
+    return http.get(auth.authentication, {
       headers: { Authorization: "Bearer " + token }
     });
   }

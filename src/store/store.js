@@ -1,9 +1,11 @@
 // Decide DEV/PROD
 let URL; // BackEnd
+let frontURL;
 if(window.location.hostname == 'localhost'){
   // local
   URL = 'http://localhost:3000';
-} else { 
+  frontURL = 'http://localhost:8080';
+} else {
   // production
   URL = 'https://price-log-server.herokuapp.com'
 }
@@ -29,18 +31,20 @@ const user = {
 
 const routes = {
   state: {
-    URL: URL,
+    URL,
+    frontURL,
     url: {
-		base: URL + '/url',
+      base: URL + '/url',
+      getShort: URL + '/url/short'
     },
-   
+
     auth: {
       login: URL + '/login',
-      register: URL + '/user',
-      auth: URL + '/auth'
+      signup: URL + '/user',
+      authentication: URL + '/auth'
     },
 //       getShopsByCity: URL + '/shop/city?city_name='
-    
+
   },
   getters: {
     getRoutes(state) {
