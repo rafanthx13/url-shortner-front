@@ -1,5 +1,6 @@
 <template>
   <img src="@/assets/wave.png" class="wave" alt="login-wave">
+  <img src="@/assets/wave.png" class="wave2" alt="login-wave-2">
   <div class="row" style="height: 90vh">
     <div class="col-0 col-md-6 flex justify-center content-center">
       <img src="@/assets/bit-ly-image.png" class="responsive" alt="login-image">
@@ -15,7 +16,7 @@
         <q-card-section>
           <div class="q-pt-lg">
             <div class="col text-h6 ellipsis flex justify-center">
-              <h2 class="text-h2 text-uppercase q-my-none text-weight-regular">Login</h2>
+              <h2 class="text-h4 text-uppercase q-my-none text-weight-regular">Login</h2>
             </div>
           </div>
         </q-card-section>
@@ -28,11 +29,14 @@
             <div>
               <q-btn class="full-width" color="primary" label="Login" @click="submit" rounded></q-btn>
               <div class="text-center q-mt-sm q-gutter-lg">
-                <!-- <router-link class="text-white" to="/login">Esqueceu a senha?</router-link> -->
-                <router-link class="text-black" to="/sign-up">Criar conta</router-link>
+                <span>You do not have an account?</span>
+                <router-link to="/sign-up" style="text-decoration: none;">
+                  <q-btn outline color="primary" label="Sign Up" rounded></q-btn>
+                </router-link>
               </div>
             </div>
           </q-form>
+
         </q-card-section>
       </q-card>
     </div>
@@ -50,7 +54,6 @@ export default {
   name: 'Login',
 
   mixins: [notificationMixin],
-
 
   data () {
     return {
@@ -90,5 +93,15 @@ export default {
   left: 0;
   bottom: 0;
   z-index: -1;
+}
+
+.wave2 {
+  position: fixed;
+    height: 100%;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    transform: rotate(180deg);
+    filter: invert(1);
 }
 </style>

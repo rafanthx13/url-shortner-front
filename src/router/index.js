@@ -4,13 +4,18 @@ import AuthAPI from '../api/Auth';
 import Url from '../api/Url'
 
 import MainLayout from '../layouts/MainLayout.vue'
-import Home from '../pages/Home.vue'
+
 import Login from '../pages/Login.vue'
 import SignUp from '../pages/SignUp.vue'
-import About from '../pages/About.vue'
-import ListUrl from '../pages/Url/ListUrl.vue'
 import NotFound from '../pages/NotFound.vue'
+import TopUrlsPublic from '../pages/TopUrlsPublic.vue'
 import CreateUrlPublic from '../pages/CreateUrlPublic.vue'
+
+import Home from '../pages/App/Home.vue'
+import About from '../pages/App/About.vue'
+import ListUrl from '../pages/App/ListUrl.vue'
+import CreateUrl from '../pages/App/CreateUrl.vue'
+import TopUrls from '../pages/App/TopUrls.vue'
 
 const routes = [
 
@@ -19,6 +24,8 @@ const routes = [
         { path: 'home', name: "AppHome", component: Home },
         { path: 'about', name: "About", component: About },
         { path: 'list-url', name: "ListUrl", component: ListUrl },
+        { path: 'create-url', name: "CreateUrl", component: CreateUrl },
+        { path: 'top-urls', name: "TopUrls", component: TopUrls },
       ],
       // GARANTE A AUTENTICAÇÃO
       // meta: {
@@ -35,6 +42,12 @@ const routes = [
     path: '/login',
     name: 'Login',
     component: Login
+  },
+  {
+    path: '/top-urls',
+    name: 'TopUrlsPublic',
+    component: TopUrlsPublic
+
   },
   {
     path: '/sign-up',

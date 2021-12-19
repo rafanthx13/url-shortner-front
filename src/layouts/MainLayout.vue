@@ -23,88 +23,70 @@
       v-model="leftDrawerOpen"
       show-if-above
       bordered
+      :width="200"
+      :breakpoint="300"
       class="bg-grey-2"
     >
-      <q-list>
+      <q-list style="height: calc(100% - 150px); margin-top: 150px; border-right: 1px solid #ddd">
         <q-item-label header>Menu</q-item-label>
 
-       <!--  <q-item clickable tag="a" target="_blank" href="https://quasar.dev">
+        <q-item clickable @click="go_to('AppHome')">
           <q-item-section avatar>
-            <q-icon name="school" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Docs</q-item-label>
-            <q-item-label caption>quasar.dev</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item clickable tag="a" target="_blank" href="https://github.com/quasarframework/">
-          <q-item-section avatar>
-            <q-icon name="code" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Github</q-item-label>
-            <q-item-label caption>github.com/quasarframework</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item clickable tag="a" target="_blank" href="https://chat.quasar.dev">
-          <q-item-section avatar>
-            <q-icon name="chat" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Discord Chat Channel</q-item-label>
-            <q-item-label caption>chat.quasar.dev</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item clickable tag="a" target="_blank" href="https://forum.quasar.dev">
-          <q-item-section avatar>
-            <q-icon name="forum" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Forum</q-item-label>
-            <q-item-label caption>forum.quasar.dev</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item clickable tag="a" target="_blank" href="https://twitter.com/quasarframework">
-          <q-item-section avatar>
-            <q-icon name="rss_feed" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Twitter</q-item-label>
-            <q-item-label caption>@quasarframework</q-item-label>
-          </q-item-section>
-        </q-item> -->
-
-        <q-item clickable @click="go_to('About')">
-          <q-item-section avatar>
-            <q-icon name="rss_feed" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>About</q-item-label>
-            <!-- <q-item-label caption>@quasarframework</q-item-label> -->
-          </q-item-section>
-        </q-item>
-
-        <q-item clickable @click="go_to('Home')">
-          <q-item-section avatar>
-            <q-icon name="rss_feed" />
+            <q-icon name="home" />
           </q-item-section>
           <q-item-section>
             <q-item-label>Home</q-item-label>
-            <!-- <q-item-label caption>@quasarframework</q-item-label> -->
           </q-item-section>
         </q-item>
 
         <q-item clickable @click="go_to('ListUrl')">
           <q-item-section avatar>
-            <q-icon name="rss_feed" />
+            <q-icon name="list" />
           </q-item-section>
           <q-item-section>
             <q-item-label>List URL</q-item-label>
-            <!-- <q-item-label caption>@quasarframework</q-item-label> -->
+          </q-item-section>
+        </q-item>
+
+        <q-item clickable @click="go_to('CreateUrl')">
+          <q-item-section avatar>
+            <q-icon name="link" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>Create Link</q-item-label>
+          </q-item-section>
+        </q-item>
+
+        <q-item clickable @click="go_to('TopUrls')">
+          <q-item-section avatar>
+            <q-icon name="sort" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>Top Urls</q-item-label>
+          </q-item-section>
+        </q-item>
+
+        <q-item clickable @click="go_to('CreateUrlPublic')">
+          <q-item-section avatar>
+            <q-icon name="logout" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>Logout</q-item-label>
           </q-item-section>
         </q-item>
 
       </q-list>
+
+      <q-img class="absolute-top" src="https://cdn.quasar.dev/img/material.png" style="height: 150px">
+          <div class="absolute-bottom bg-transparent">
+            <q-avatar size="56px" class="q-mb-sm">
+              <img src="./../assets/avatar-icon-design.png">
+            </q-avatar>
+            <div class="text-weight-bold">Razvan Stoenescu</div>
+            <!-- <div>@rstoenescu</div> -->
+          </div>
+        </q-img>
+
     </q-drawer>
 
     <q-page-container>

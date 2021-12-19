@@ -1,10 +1,5 @@
 <template>
-  <q-layout>
-    <q-page-container class="bg-gradient">
-      <q-page class="q-pa-sm" style="width: 70%; margin-right: auto; margin-left: auto; text-align: center;">
-
-      <h1 class="text-h2 text-white">Quasar App - Shortner URL</h1>
-
+  <q-page class="q-pa-sm q-mt-lg" style="width: 80%; margin-right: auto; margin-left: auto; text-align: center;">
       <q-card class="my-card">
       <q-card-section>
         <div class="text-h6">Paste the URL to be shortened</div>
@@ -57,17 +52,8 @@
       </q-card-section>
 
     </q-card>
+  </q-page>
 
-    <q-card class="my-card">
-      <q-card-section>
-        <div class="text-h6">Para mais Features faça login</div>
-        <q-btn label="Login" color="primary" @click="this.$router.push({name: 'Login'})"/>
-      </q-card-section>
-    </q-card>
-
-      </q-page>
-    </q-page-container>
-  </q-layout>
 
 </template>
 
@@ -75,10 +61,10 @@
 </style>
 
 <script>
-  import Url from './../api/Url'
-  import notificationMixin from './../mixins/notifications'
+  import Url from '@/api/Url'
+  import notificationMixin from '@/mixins/notifications'
 export default {
-  name: 'CreateURLPublic',
+  name: 'CreateURL',
 
   mixins: [notificationMixin],
 
@@ -113,6 +99,7 @@ export default {
 <style scoped>
 
 .bg-gradient {
-  background-image: linear-gradient(to right, #c3613a, #cf4f65, #bf5095, #8f63be, #1976d2);
+  background-image: linear-gradient(to right,
+   #c3613a, #cf4f65, #bf5095, #8f63be, #1976d2);
 }
 </style>
