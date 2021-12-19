@@ -118,3 +118,13 @@ Requisitos fundamentais:
 Entrega:
 Coloca o código em um repositorio PRIVADO e compartilhar acesso com meu email diogo@speedio.com.br [me enviar a URL pf ; ))]
 Faz um video da tela do aplicativo explicando as suas funcionalidades e eventuais features que ficaram de fora. (Se quiser dica de app pra gravar tela: extensão do chrome: https://www.vidyard.com/)
+
+
+## Proximos Passos
+
++ Realizar Login/SignUp Corretamente com a protaçâo do Local Storage
++ Listar as próprias URl
++ criar o botão de Delete, criar o modela e assim deletar
+  - proteçao conta delete de outro na API pelo passport
++ API que retornar as 100 paginas mais vistas, todos os seus addos
+  - por o count para contar e no log para contar
