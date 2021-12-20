@@ -1,10 +1,9 @@
-// Instância inicial do Axios
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://localhost:3000/' // not workin
+axios.defaults.baseURL = 'http://localhost:3000/'
 
 let http = axios.create({
-	baseURL: 'http://localhost:3000/', // not working
+	baseURL: 'http://localhost:3000/',
 	headers: {
 		'Access-Control-Allow-Origin': '*',
 		'Content-Type': 'application/json',
@@ -12,11 +11,11 @@ let http = axios.create({
 	}
 });
 
-// Obriga a colocar Bearer Token
+// Force take Bearer Token
 http.interceptors.request.use(
 	(config) => {
 		const token = localStorage.getItem('token');
-		if (token) 
+		if (token)
 			config.headers.Authorization = `Bearer ${token}`;
 		return config;
 	},

@@ -50,7 +50,6 @@
 import Auth from '../api/Auth'
 import notificationMixin from './../mixins/notifications'
 
-// @ is an alias to /src
 export default {
   name: 'SignUp',
 
@@ -68,19 +67,13 @@ export default {
 
   methods: {
     submit() {
-      // this.$refs.observer.validate().then(result => {
-        // if (result) {
-          // console.log(result)
           Auth.signup(this.signup).then( () => {
-            // console.log('sucess')
-            // this.notify_success('SUCESSO ao cadastrar')
+            this.$router.push({name: 'Login'})
           })
           .catch( () => {
-            // console.log('error r')
             this.notify_error('Erro ao cadastrar')
           })
         },
-      // })
     },
 
 }

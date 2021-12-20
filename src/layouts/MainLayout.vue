@@ -12,10 +12,10 @@
         />
 
         <q-toolbar-title>
-          Quasar Url Shortner App
+          Quasar Url Shortner
         </q-toolbar-title>
 
-        <div>v.1.0.0</div>
+        <!-- <div>v.1.0.0</div> -->
       </q-toolbar>
     </q-header>
 
@@ -57,7 +57,7 @@
           </q-item-section>
         </q-item>
 
-        <q-item clickable @click="go_to('TopUrls')">
+        <q-item clickable @click="go_to('AppTopUrls')">
           <q-item-section avatar>
             <q-icon name="sort" />
           </q-item-section>
@@ -66,7 +66,7 @@
           </q-item-section>
         </q-item>
 
-        <q-item clickable @click="go_to('CreateUrlPublic')">
+        <q-item clickable @click="log_out">
           <q-item-section avatar>
             <q-icon name="logout" />
           </q-item-section>
@@ -82,8 +82,7 @@
             <q-avatar size="56px" class="q-mb-sm">
               <img src="./../assets/avatar-icon-design.png">
             </q-avatar>
-            <div class="text-weight-bold">Razvan Stoenescu</div>
-            <!-- <div>@rstoenescu</div> -->
+            <div class="text-weight-bold">{{this.$store.getters.getUser.user_name}}</div>
           </div>
         </q-img>
 
@@ -113,7 +112,12 @@ export default {
   methods: {
     go_to(link_path) {
       this.$router.push({name: link_path}).catch(() => {})
-    }
+    },
+    log_out(){
+        localStorage.removeItem('user');
+        localStorage.removeItem('token');
+        this.$router.push({name: 'Login'})
+      },
   },
 
 }

@@ -122,9 +122,64 @@ Faz um video da tela do aplicativo explicando as suas funcionalidades e eventuai
 
 ## Proximos Passos
 
-+ Realizar Login/SignUp Corretamente com a protaçâo do Local Storage
-+ Listar as próprias URl
-+ criar o botão de Delete, criar o modela e assim deletar
++ Realizar Login/SignUp Corretamente com a protaçâo do Local Storage [x]
++ Listar as próprias URl [x]
++ criar o botão de Delete, criar o modela e assim deletar [x]
   - proteçao conta delete de outro na API pelo passport
++ adicionar contagem
 + API que retornar as 100 paginas mais vistas, todos os seus addos
   - por o count para contar e no log para contar
++ COntagem de Url e LIstar TOp Urls Acessadas
+
+=
+
+foi necessario por o passopor.initizlize em rotes.js para o passport funcionar
+
+====
+
+components: {
+    'TopUrl': TopUrl,
+  },
+
+Se voce usar [] vai dar aquele erro de usctomerlement, como se desse problema em nestedCOMpoente, mas na verdade é um erro seu, pois
+
+a proprieade compeontent é um objeto
+
+======
+
+acessar route.name em vue3
+
+import { useRouter } from 'vue-router';
+
+export default {
+
+  name: "TopUrl",
+
+  mixins: [notificationMixin],
+
+  data() {
+    return {
+      // isInApp: currentRouteName == '/app/top-urls', // this.$router.options.location
+      rows: [],
+      columns: [
+        { name: "actual_url", label: "Actual Link", field: "actual_url" },
+        { name: "go_to_url", label: "GoTo Link", field: "go_to_url" },
+        { name: "user_id", label: "User ID", field: "user_id" },
+        // { name: "create_date", label: "CreateDate", field: "create_date" },
+        { name: "count", label: "Count", field: "count" },
+      ],
+      initialPagination: {
+        sortBy: "desc",
+        descending: false,
+        page: 1,
+        rowsPerPage: 20,
+        // rowsNumber: xx if getting data from a server
+      },
+    };
+  },
+
+  computed: {
+    isInApp() {
+        return useRouter().currentRoute.value.name == "AppTopUrls"
+    }
+  },

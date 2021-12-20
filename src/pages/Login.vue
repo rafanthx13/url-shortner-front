@@ -16,12 +16,15 @@
         <q-card-section>
           <div class="q-pt-lg">
             <div class="col text-h6 ellipsis flex justify-center">
+              <router-link to="/" style="text-decoration: none;">
+                <q-btn flat round icon="arrow_back" rounded style="color: black;"></q-btn>
+              </router-link>
               <h2 class="text-h4 text-uppercase q-my-none text-weight-regular">Login</h2>
             </div>
           </div>
         </q-card-section>
         <q-card-section>
-          <q-form class="q-gutter-md" @submit.prevent="submitForm">
+          <q-form class="q-gutter-md">
             <q-input label="Username" v-model="login.user_name">
             </q-input>
             <q-input label="Password" type="password" v-model="login.password">
@@ -48,7 +51,6 @@
 import Auth from '../api/Auth'
 import notificationMixin from './../mixins/notifications'
 
-// @ is an alias to /src
 export default {
 
   name: 'Login',
@@ -64,11 +66,18 @@ export default {
     }
   },
 
+  mounted: function () {
+    if (this.$route.params.auth) {
+      this.notify_error('É necessário logar corretamente para acessar')
+    }
+  },
+
     methods: {
 
       submit() {
         Auth.login(this.login).then( (result) => {
           localStorage.setItem('token', result.data.token);
+          result.data.user_name = this.login.user_name
           this.$store.commit("setUser", result.data);
           if (localStorage.getItem('token') != null){
             this.$router.push({name: 'AppHome'})

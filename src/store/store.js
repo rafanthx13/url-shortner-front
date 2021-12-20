@@ -35,7 +35,8 @@ const routes = {
     frontURL,
     url: {
       base: URL + '/url',
-      getShort: URL + '/url/short'
+      getShort: URL + '/url/short',
+      getTop: URL + '/url/top-urls'
     },
 
     auth: {
