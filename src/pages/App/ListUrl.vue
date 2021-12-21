@@ -55,8 +55,6 @@ export default {
         { name: 'actual_url', label: 'Original Url', field: 'actual_url' },
         { name: 'go_to_url', label: 'Short Url', field: 'go_to_url' },
         { name: "count", label: "Count", field: "count" },
-        // { name: 'user_id', label: 'User ID', field: 'user_id' },
-        // { name: 'create_date', label: 'CreateDate', field: 'create_date' },
         { name: 'actions', label: 'Delete', field: 'url_id' },
       ],
     }
@@ -65,7 +63,7 @@ export default {
   methods: {
     delete_url() {
       Url.delete(this.url_to_delete).then(() => {
-          this.notify_success('URL deletada')
+          this.notify_success('URL deleted successfully')
           let the_url_to_delete = this.url_to_delete
           this.rows = this.rows.filter(function(obj) {
             return obj.url_id !== the_url_to_delete;
@@ -74,17 +72,15 @@ export default {
         })
         .catch((err) => {
           console.error(err)
-          this.notify_error('Erro ao deletar URL')
+          this.notify_error('Error in Delete URL')
           this.confirm = false
         })
     },
-
   },
 
   created() {
     Url.getAll()
       .then((result) => {
-        console.log(result)
         this.rows = result.data;
       })
   },

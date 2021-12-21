@@ -11,7 +11,7 @@ let http = axios.create({
 	}
 });
 
-// Force take Bearer Token
+// Force put Bearer and token in header
 http.interceptors.request.use(
 	(config) => {
 		const token = localStorage.getItem('token');

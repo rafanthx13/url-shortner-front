@@ -28,7 +28,7 @@ const routes = [
       { path: 'create-url', name: "CreateUrl", component: CreateUrl },
       { path: 'top-urls', name: "AppTopUrls", component: AppTopUrls },
     ],
-    // Grant Authentication
+    // Grant Authentication to each url in '/app'
     meta: {
       requiresAuth: true
     },
@@ -37,7 +37,6 @@ const routes = [
     path: '/',
     name: "CreateUrlPublic",
     component: CreateUrlPublic
-
   },
   {
     path: '/login',
@@ -48,7 +47,6 @@ const routes = [
     path: '/top-urls',
     name: 'TopUrlsPublic',
     component: TopUrlsPublic
-
   },
   {
     path: '/sign-up',
@@ -70,7 +68,6 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
 })
-
 
 async function searchShortUrl(short_url) {
   try {
@@ -117,7 +114,6 @@ router.beforeEach(async (to, from, next) => {
       window.location.href = s
     } else {
       next({ name: 'NotFound' });
-      console.log('entrou no not-found')
     }
   }
 

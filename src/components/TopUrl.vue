@@ -76,7 +76,7 @@ export default {
         this.rows = result.data;
       })
       .catch(() => {
-        this.notify_error("Erro ao bsucar Top Urls");
+        this.notify_error("Error fetching Top Urls");
       });
   },
 

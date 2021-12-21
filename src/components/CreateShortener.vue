@@ -42,6 +42,10 @@ export default {
 
   mixins: [notificationMixin],
 
+  props:{
+    isInApp: Boolean,
+  },
+
   data() {
     return {
       regex_url: new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)/),
@@ -59,13 +63,15 @@ export default {
   methods: {
 
     createUrlShortner() {
-      Url.post(this.url).then((result) => {
-          console.log('chegou aqui')
+      console.log('this.isInApp', this.isInApp)
+      let select_post = this.isInApp ? 'postPrivate' : 'post'
+      console.log('select_post', select_post)
+      Url[select_post](this.url).then((result) => {
           this.created_url = result.data
         })
         .catch((err) => {
           console.error(err)
-          this.notify_error('Erro ao criar URL')
+          this.notify_error('Error creating URL')
         })
 
     },

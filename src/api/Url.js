@@ -17,6 +17,10 @@ export default class {
     return http.post(url.base, body);
   }
 
+  static postPrivate(body){
+    return http.post(url.postPrivate, body);
+  }
+
   static getShorUrl(short_url){
     return http.get(url.getShort + short_url);
   }

@@ -12,7 +12,7 @@
         />
 
         <q-toolbar-title>
-          Quasar Url Shortner
+          Quasar App Url Shortner
         </q-toolbar-title>
 
         <!-- <div>v.1.0.0</div> -->
@@ -53,7 +53,7 @@
             <q-icon name="link" />
           </q-item-section>
           <q-item-section>
-            <q-item-label>Create Link</q-item-label>
+            <q-item-label>Create ShortUrl</q-item-label>
           </q-item-section>
         </q-item>
 

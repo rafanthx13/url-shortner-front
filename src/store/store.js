@@ -36,13 +36,14 @@ const routes = {
     url: {
       base: URL + '/url',
       getShort: URL + '/url/short',
-      getTop: URL + '/url/top-urls'
+      getTop: URL + '/url/top-urls',
+      postPrivate: URL + '/url/private-url',
     },
 
     auth: {
       login: URL + '/login',
       signup: URL + '/user',
-      authentication: URL + '/auth'
+      authentication: URL + '/auth',
     },
 //       getShopsByCity: URL + '/shop/city?city_name='
 
