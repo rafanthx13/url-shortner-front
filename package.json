@@ -1,8 +1,8 @@
 {
   "name": "url-shortner-front",
   "version": "1.0.0",
-  "description": "URL Quasar Shortner",
-  "productName": "Quasar App",
+  "description": "Quasar App URL Shortner",
+  "productName": "Quasar App  URL Shortner",
   "author": "Rafael Assis <rafaassis15@gmail.com>",
   "private": true,
   "scripts": {

@@ -1,5 +1,7 @@
 npx cypress open
 
+no window foi necessario fazer isso
+ .\node_modules\.bin\cypress.cmd install
 
 cypress.json
 
@@ -10,7 +12,7 @@ cypress.json
 ////
 
 package.json
-npm cypres srun
+npm cypress run
 npx cypress open
 ================
 
