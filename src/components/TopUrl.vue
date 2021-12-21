@@ -22,12 +22,11 @@
         row-key="url_id"
         no-data-label="I didn't find anything for you"
       >
-        <template v-slot:body-cell-actions="props">
+        <template v-slot:body-cell-go_to_url="props">
           <q-td :props="props">
-            <div>
-              <q-badge color="purple" :label="props.value" />
-            </div>
-            <div class="my-table-details">||</div>
+            <a :href="this.$store.getters.getRoutes.frontURL + '/' + props.row.go_to_url">
+              {{this.$store.getters.getRoutes.frontURL}}/{{props.row.go_to_url}}
+            </a>
           </q-td>
         </template>
       </q-table>
@@ -83,3 +82,16 @@ export default {
 
 };
 </script>
+
+
+<style scoped>
+
+tbody td .q-table  {
+  text-align: center !important;
+}
+
+th {
+  text-align: center !important;
+}
+
+</style>

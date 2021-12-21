@@ -4,9 +4,12 @@
     <q-card-section class="q-pt-lg">
       <div class="text-h6">Paste the URL to be shortened</div>
       <div class="q-pa-md">
-        <q-form @submit="createUrlShortner" class="q-gutter-md">
+        <q-form @submit.prevent.stop="createUrlShortner" class="q-gutter-md">
           <div class="row" style="width: 100%;">
-            <q-input filled v-model="url.actual_url" label="Your URL" style="width: 80%" />
+            <q-input filled v-model="url.actual_url" label="Your URL" style="width: 80%"
+              lazy-rules
+              :rules="url_rule"
+             />
             <q-btn label="Short Url" type="submit" color="primary" />
           </div>
         </q-form>
@@ -41,6 +44,10 @@ export default {
 
   data() {
     return {
+      regex_url: new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)/),
+      url_rule: [
+        value => value.match(this.regex_url)|| 'Field must contain a valid URL',
+      ],
       url: {
         user_id: '',
         actual_url: '',
@@ -50,6 +57,7 @@ export default {
   },
 
   methods: {
+
     createUrlShortner() {
       Url.post(this.url).then((result) => {
           console.log('chegou aqui')

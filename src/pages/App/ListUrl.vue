@@ -3,7 +3,9 @@
 
     <!-- Listing Data -->
     <div class="q-pa-md">
-      <q-table title="My Urls Shorteners" :rows="rows" :columns="columns" row-key="url_id" no-data-label="I didn't find anything for you">
+      <q-table title="My Urls Shorteners" :rows="rows" :columns="columns" row-key="url_id"
+        no-data-label="I didn't find anything for you" class="ultra">
+        <!-- Format go_to_url -->
         <template v-slot:body-cell-go_to_url="props">
           <q-td :props="props">
             <a :href="this.$store.getters.getRoutes.frontURL + '/' + props.row.go_to_url">
@@ -11,6 +13,7 @@
             </a>
           </q-td>
         </template>
+        <!-- Format actions -->
         <template v-slot:body-cell-actions="props">
           <q-td :props="props">
             <q-btn round color="red" icon="delete" @click="confirm = true; this.url_to_delete = props.row.url_id" />
@@ -78,8 +81,6 @@ export default {
 
   },
 
-
-
   created() {
     Url.getAll()
       .then((result) => {
@@ -91,3 +92,15 @@ export default {
 }
 
 </script>
+
+<style scoped>
+
+tbody td .q-table  {
+  text-align: center !important;
+}
+
+th {
+  text-align: center !important;
+}
+
+</style>

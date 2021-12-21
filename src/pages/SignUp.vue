@@ -22,11 +22,11 @@
         </q-card-section>
         <q-card-section>
           <q-form class="q-gutter-md" @submit.prevent="submitForm">
-            <q-input label="Username" type="Enter your User Name" v-model="signup.user_name">
+            <q-input label="Username" v-model="signup.user_name">
             </q-input>
-            <q-input label="Password" type="Enter your password" v-model="signup.password">
+            <q-input label="Password" type="password" v-model="signup.password">
             </q-input>
-            <q-input label="Email" type="Your Email" v-model="signup.email">
+            <q-input label="Email" type="email" v-model="signup.email">
             </q-input>
             <div>
               <q-btn class="full-width" color="primary" label="Create An Account" @click="submit" rounded></q-btn>

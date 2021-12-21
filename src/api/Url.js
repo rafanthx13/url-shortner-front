@@ -14,7 +14,6 @@ export default class {
   }
 
   static post(body){
-    console.log('body', body)
     return http.post(url.base, body);
   }
 
