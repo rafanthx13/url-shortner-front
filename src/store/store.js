@@ -7,7 +7,8 @@ if(window.location.hostname == 'localhost'){
   frontURL = 'http://localhost:8080';
 } else {
   // production
-  URL = 'https://price-log-server.herokuapp.com'
+  URL = 'https://quasar-url-shortner-api.herokuapp.com'
+  frontURL = 'https://quasar-url-shortener.netlify.app';
 }
 
 const user = {
